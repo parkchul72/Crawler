@@ -41,7 +41,7 @@ class Spider:
             Spider.update_files()
 
     @staticmethod
-    def gater_links(page_url):
+    def gather_links(page_url):
         html_string = ''
         try:
              response = urlopen(page_url)
