@@ -1,4 +1,3 @@
-# Using Python3 for HTMLParser and parse
 from html.parser import HTMLParser
 from urllib import parse
 
@@ -13,7 +12,7 @@ class LinkFinder(HTMLParser):
         if tag == 'a':
             for (attribute, value) in attrs:
                 if attribute == 'href':
-                    url = urllib.parse.urljoin(self.base_url, value)
+                    url = parse.urljoin(self.base_url, value)
                     self.links.add(url)
 
     def page_links(self):
@@ -21,7 +20,3 @@ class LinkFinder(HTMLParser):
 
     def error(self, message):
         pass
-
-finder = LinkFinder()
-finder.feed('<html><head><title>Title Test</title></head>'
-            '<body><h1>Parse Test</h1></body></html>')
